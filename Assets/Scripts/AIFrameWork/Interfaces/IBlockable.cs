@@ -4,6 +4,6 @@
     {
         public bool IsBlocked();
 
-        public void ChangeBlockStatus(bool newStatus);
+        public void IOBlockStatus();
     }
 }
