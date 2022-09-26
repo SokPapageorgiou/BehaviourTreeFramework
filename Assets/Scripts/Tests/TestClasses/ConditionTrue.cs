@@ -4,6 +4,6 @@ namespace Tests.TestClasses
 {
     public class ConditionTrue : ICondition
     {
-        public bool Assert() => false;
+        public bool Assert() => true;
     }
 }

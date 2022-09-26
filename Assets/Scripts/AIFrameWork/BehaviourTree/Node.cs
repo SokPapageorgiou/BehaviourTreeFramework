@@ -1,6 +1,6 @@
 ﻿using AIFrameWork.Interfaces;
 
-namespace Tests.TestClasses
+namespace AIFrameWork.BehaviourTree
 {
     public class Node : INode
     {
