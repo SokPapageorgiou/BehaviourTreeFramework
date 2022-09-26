@@ -9,7 +9,7 @@ namespace AIFrameWork.Interfaces
         /// </summary>
         /// <param name="blockable">Block the execution of a Tree if the task takes more than one frame to execute</param>
         /// <returns></returns>
-        public ITask Task(IBlockable blockable);
+        public ITask Task();
 
         public INode Succeeded();
         public INode Failed();

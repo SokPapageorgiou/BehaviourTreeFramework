@@ -22,7 +22,7 @@ namespace AIFrameWork.BehaviourTree
         {
             if (nodeToProcess.Condition().Assert())
             {
-                nodeToProcess.Task(this).Execute();
+                nodeToProcess.Task().Execute();
                 return nodeToProcess.Succeeded();
             }
 
