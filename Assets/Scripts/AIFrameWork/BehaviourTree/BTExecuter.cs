@@ -6,9 +6,10 @@ namespace AIFrameWork.BehaviourTree
     { 
         private bool _isBlocked;
         private INode _node;
-       
+
         public bool IsBlocked() => _isBlocked;
-        public void IOBlockStatus() => _isBlocked = !_isBlocked;
+        public void SetBlockStatus(bool newStatus) => _isBlocked = newStatus;
+        
 
         public INode Node => _node;
 
@@ -21,7 +22,7 @@ namespace AIFrameWork.BehaviourTree
 
             return true;
         }
-        
+
         private INode ProcessNode(INode nodeToProcess)
         {
             if (nodeToProcess.Condition().Assert())
@@ -32,6 +33,5 @@ namespace AIFrameWork.BehaviourTree
 
             return nodeToProcess.Failed();
         }
-
     }
 }

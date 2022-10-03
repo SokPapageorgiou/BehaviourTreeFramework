@@ -14,10 +14,10 @@ namespace Tests
         [Test]
         public void BTExecuter_IOBlockStatus()
         {
-            _btExecuter.IOBlockStatus();
+            _btExecuter.SetBlockStatus(true);
             Assert.IsTrue(_btExecuter.IsBlocked());
             
-            _btExecuter.IOBlockStatus();
+            _btExecuter.SetBlockStatus(false);;
             Assert.IsFalse(_btExecuter.IsBlocked());
         }
 
@@ -27,8 +27,15 @@ namespace Tests
             );
 
         [Test]
-        public void BTExecuter_Run()
+        public void BTExecuter_Run_True()
         {
+            Assert.IsTrue(_btExecuter.Run(_start));
+        }
+        
+        [Test]
+        public void BTExecuter_Run_False()
+        {
+            _btExecuter.SetBlockStatus(false);
             Assert.IsTrue(_btExecuter.Run(_start));
         }
     }
