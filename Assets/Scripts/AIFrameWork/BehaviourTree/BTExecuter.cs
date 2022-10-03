@@ -10,12 +10,16 @@ namespace AIFrameWork.BehaviourTree
         public bool IsBlocked() => _isBlocked;
         public void IOBlockStatus() => _isBlocked = !_isBlocked;
 
-        public void RunBT(INode firstNode)
+        public INode Node => _node;
+
+        public bool Run(INode firstNode)
         {
-            if (_isBlocked) return;
+            if (_isBlocked) return false;
 
             _node = firstNode;
             while (_node != null) _node = ProcessNode(_node);
+
+            return true;
         }
         
         private INode ProcessNode(INode nodeToProcess)
